@@ -19,3 +19,57 @@ body {
   justify-content: center;
 }
 
+#carteRecipe{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-left: 110px;
+  margin-right: 110px;
+}
+
+.containRecipe{
+  height: 364px;
+  width: 380px;
+  margin: 20px;
+  border-radius: 5px;
+}
+
+.RecipeImg{
+  height: 178px;
+  width: 380px;
+  background-color: #C7BEBE;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.recipeInfo{
+  background-color: #E7E7E7;
+  padding: 20px;
+  max-height: 186px;
+  border-radius: 0px 0px 5px 5px;
+}  
+.infoNameTime, .infoIngredientsDescription{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}  
+
+.recipeName{
+  font-size: 18px;
+}
+.recipeIngredients{
+  font-size: 12px;
+  max-height: 109px;
+  max-width: 171px;
+}     
+.recipeTime{
+  font-size: 18px;
+} 
+.recipeDescription{
+  font-size: 12px;
+  max-height: 89px;
+  max-width: 171px;
+  text-overflow: ellipsis;
+	overflow: auto;
+}     
+
+
