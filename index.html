@@ -1,0 +1,79 @@
+<html lang="fr">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Les petits plats</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styleRecherche.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">  </head>
+  <body>
+    <header class="topnav" id="myTopnav">
+      <div id="containLogo">
+        <img id="logo" src="logo.png">
+      </div>
+      <div id="containBarreRecherche">
+        <input type="search" id="siteSearch"
+       placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette">
+      </div>
+
+      <div id="containMotsCles">
+        
+          <div class="motsCles1">
+          <ul>
+            <li class="deroulant"> <a href="#">Ingredients</a>
+              <ul id="sousRecherche1">
+                <li><input type="search" id="siteSearchIngredients" form="rechercheMots"
+                  placeholder="Recherche un ingédient"></li>
+                
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div class="motsCles2">
+          <ul>
+            <li class="deroulant"> <a href="#">Appareil</a>
+              <ul id="sousRecherche2">
+                <li><input type="search" id="siteSearchAppareil" form="rechercheMots"
+                  placeholder="Recherche un ingédient"></li>
+
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div class="motsCles3">
+          <ul>
+            <li class="deroulant"> <a href="#">Ustensiles</a>
+              <ul id="sousRecherche3">
+                <li><input type="search" id="siteSearchUstensiles" form="rechercheMots"
+                  placeholder="Recherche un ingédient"></li>
+
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </header>
+
+    <main id="main">
+      <section id="carteRecipe">
+        
+      </section>
+    </main>
+    <footer>
+      
+    </footer>
+    <script src="class.js"></script>
+    <script src="function.js"></script>
+    <script src="recipes.js"></script>
+    <script src="main.js"></script>
+    
+
+
+  </body>
+</html>

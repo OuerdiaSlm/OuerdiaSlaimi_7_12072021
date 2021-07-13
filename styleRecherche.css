@@ -1,0 +1,187 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+#containBarreRecherche{
+  display: flex;
+  justify-content: center;
+}
+
+/*------------------D BARRE DE RECHERCHE-------------------*/
+#siteSearch{
+  width:1240px;
+  height :69px;
+  background-color: #E7E7E7;
+  border: 0px;
+  padding: 20px;
+}
+#siteSearchIngredients::placeholder, #siteSearchAppareil::placeholder, #siteSearchUstensiles::placeholder{
+  color: #FFFFFF;
+  border: none;
+  border: 0px;
+  font-size: 18px;
+}
+
+/*.........................*/
+#siteSearchIngredients{
+  width: 667px;
+  height: 69px;
+  padding: 10px;
+  background-color:#3282F7;
+  border: none;
+}
+#siteSearchAppareil{
+  width: 667px;
+  height: 69px;
+  padding: 10px;
+  background-color:#68D9A4;
+  border: none;
+}
+#siteSearchUstensiles{
+  width: 667px;
+  height: 69px;
+  padding: 10px;
+  background-color:#ED6454;
+  border: none;
+}
+/*--------------------------*/
+
+/*------------------F BARRE DE RECHERCHE-------------------*/
+
+
+
+
+#containMotsCles{
+  max-width: 1240px;
+  display: flex;
+  justify-content: start;
+  padding-top: 40px;
+  margin-left: 130px;
+  margin-right: 130px;
+}
+/*..................................*/
+.motsCles1{
+  width: 170px;
+  height: 69px;
+  background-color: #3282f7;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  margin: 10px;
+  border-radius: 5px;position: sticky;
+}
+.motsCles2{
+  width: 170px;
+  height: 69px;
+  background-color: #68D9A4;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  margin: 10px;
+  border-radius: 5px;
+  border-radius: 5px;position: sticky;
+}
+.motsCles3{
+  width: 170px;
+  height: 69px;
+  background-color: #ED6454;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  margin: 10px;
+  border-radius: 5px;
+  border-radius: 5px;position: sticky;
+}
+/*..................................*/
+
+.motsCles1 ul, .motsCles2 ul, .motsCles3 ul{
+  list-style-type: none;
+}
+
+.motsCles1 ul::after, .motsCles2 ul::after, .motsCles3 ul::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.motsCles1 a, .motsCles2 a, .motsCles3 a{
+  display: block;
+  text-decoration: none;
+  color: white;
+  border-bottom: 2px solid transparent;
+  font-size: 18px;
+}
+
+/*..................................*/
+#sousRecherche1{
+  display: none;
+  background-color: #3282F7;
+  color: white;
+  position: absolute;
+  height: 397px;
+  width: 667px;
+  left: 0px;
+  top: 0px;
+  border-radius: 5px;
+}
+#sousRecherche2{
+  display: none;
+  background-color: #68D9A4;
+  color: white;
+  position: absolute;
+  height: 397px;
+  width: 667px;
+  left: 0px;
+  top: 0px;
+  border-radius: 5px;
+}
+#sousRecherche3{
+  display: none;
+  background-color: #ED6454;
+  color: white;
+  position: absolute;
+  height: 397px;
+  width: 667px;
+  left: 0px;
+  top: 0px;
+  border-radius: 5px;
+}
+/*..................................*/
+.motsCles1 > ul li:hover #sousRecherche1, .motsCles2 > ul li:hover #sousRecherche2, .motsCles3 > ul li:hover #sousRecherche3{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  
+}
+
+#sousRecherche1 li, #sousRecherche2 li, #sousRecherche3 li{
+  display: flex;
+  float: none;
+  text-align: left;
+}
+#sousRecherche1 a, #sousRecherche2 a, #sousRecherche3 a{
+  padding: 10px;
+  border-bottom: none;
+}
+#sousRecherche1 a:hover, #sousRecherche2 a:hover, #sousRecherche3 a:hover{
+  width: 100%;
+  border-bottom: none;
+  background-color: RGBa(200,200,200,0.1);
+}
+.deroulant > a::after{
+  content:" ▼";
+  font-size: 18px;
+}
+
+.motsSuggerer{
+  width: 200px;
+  
+}
+
