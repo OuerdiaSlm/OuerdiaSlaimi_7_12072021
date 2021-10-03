@@ -70,6 +70,32 @@ body {
   max-width: 171px;
   text-overflow: ellipsis;
 	overflow: auto;
-}     
+}  
 
+.ingredientFilterClick{
+  background-color: #3282f7;
+  color: white;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+}
 
+.applianceFilterClick{
+  background-color: #68D9A4;
+  color: white;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.ustensilesFilterClick{
+  background-color:#ED6454;
+  color: white;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+i{
+  margin: 10px;
+}
