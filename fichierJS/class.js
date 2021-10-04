@@ -77,18 +77,3 @@ class Recette {
   }
   
 }
-/*
-class RechercheIngredients{
-  constructor(ingredients){
-    this.ingredients=ingredients;
-  }
-  html(){
-    let sousRecherche1 = document.getElementById("sousRecherche1");
-    console.log(sousRecherche1);
-    const motsSuggere=document.createElement("li");
-    sousRecherche1.appendChild(motsSuggere);
-    motsSuggere.setAttribute("class", "motsSuggerer");
-    attribution(sousRecherche1, ingredients, this.ingredients);
-  }
-}
-*/
