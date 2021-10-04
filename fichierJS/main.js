@@ -20,15 +20,11 @@ for (let i = 0; i < recipes.length; i++) {
   allRecipes.push(carte);
   displayedRecipes.push(carte);
   carte.html();
-
-
-  
 }
 
 displayIngredients(displayedRecipes);
 displayAppareilles(displayedRecipes);
 displayUstensiles(displayedRecipes);
-
 
 //-1 Recupération de la barre de recherche
 let search = document.getElementById("siteSearch");
@@ -67,7 +63,6 @@ let startSearch= (word) =>{
       }
     }
   }
-
   displayIngredients(displayedRecipes);
   displayAppareilles(displayedRecipes);
   displayUstensiles(displayedRecipes);
@@ -79,6 +74,7 @@ let filtre = document.getElementsByClassName("motsSuggerer");
 clickFiltre(filtre);
   let tabFiltre=[];
   // boucle filtre/evenement click...filtreClass=filtre
+  console.log("Tabfiltre 1 : "+tabFiltre)
   function clickFiltre(filtreclass){
     for (i=0; i<filtreclass.length; i++){
       filtreclass[i].addEventListener("click", function(e){
@@ -89,6 +85,9 @@ clickFiltre(filtre);
             } else{
               tabFiltre= tabFiltre.filter(word => word != target );
             }
+
+console.log("Tabfiltre 2 : "+tabFiltre)
+
             
             // Div qui va contenir les filtres sur le quel on a cliqué
             const divFilterSelected = document.getElementById("filterSelected");
@@ -104,9 +103,6 @@ clickFiltre(filtre);
             croix.setAttribute("id", "croix");    
 
             displayRecipesWithTags(allRecipes, tabFiltre);
-
-            
-            
         })
         
     }
