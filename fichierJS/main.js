@@ -85,14 +85,15 @@ clickFiltre(filtre);
             } else{
               tabFiltre= tabFiltre.filter(word => word != target );
             }
-
-console.log("Tabfiltre 2 : "+tabFiltre)
+            console.log("Tabfiltre 2 : "+tabFiltre)
 
             
             // Div qui va contenir les filtres sur le quel on a cliqué
             const divFilterSelected = document.getElementById("filterSelected");
             let spanFilterSelectedClick=document.createElement("span");
+            spanFilterSelectedClick.setAttribute("id", "spanClick");
             divFilterSelected.appendChild(spanFilterSelectedClick);
+            
 
             //(-1) psk c'est un tableau et l'index d'un tableau commence par 0
             spanFilterSelectedClick.textContent=tabFiltre[tabFiltre.length-1];
@@ -103,8 +104,26 @@ console.log("Tabfiltre 2 : "+tabFiltre)
             croix.setAttribute("id", "croix");    
 
             displayRecipesWithTags(allRecipes, tabFiltre);
+            //TEST
+            for (let b=0; b < allRecipes.length; b++){
+              for (let c=0; c < allRecipes[b].ingredients.length; c++){
+                if(spanFilterSelectedClick.textContent === allRecipes[b].ingredients[c].ingredient){
+                  spanFilterSelectedClick.setAttribute("class", "filtreClckIngredients");
+                }
+              }
+              if(spanFilterSelectedClick.textContent === allRecipes[b].appliance){
+                spanFilterSelectedClick.setAttribute("class", "filtreClickAppliance");
+              }
+              for (let d=0; d < allRecipes[b].ustensils.length; d++){
+                if(spanFilterSelectedClick.textContent === allRecipes[b].ustensils[d]){
+                  spanFilterSelectedClick.setAttribute("class", "filtreClickUstensils");
+                }
+              }
+            }
         })
         
     }
     
   }
+
+  

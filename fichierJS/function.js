@@ -56,17 +56,17 @@ function displayRecipesWithTags(allRecipes, tabFiltre) {
       }
       console.log("test" + tabFiltre);
     }
-    let testKan = [];
+    let allRecipeReplace = [];
     // console.log("counteurOk:"+counteurOk+"tabFiltre:"+tabFiltre.length);
     if (counteurOk === tabFiltre.length) {
       allRecipes[k].html();
-      testKan.push(allRecipes[k]);
+      allRecipeReplace.push(allRecipes[k]);
 
-      console.log(testKan);
+      console.log(allRecipeReplace);
       console.log(allRecipes[k]);
-      displayIngredients(testKan);
-      displayAppareilles(testKan);
-      displayUstensiles(testKan);
+      displayIngredients(allRecipeReplace);
+      displayAppareilles(allRecipeReplace);
+      displayUstensiles(allRecipeReplace);
     }
   }
   let filtre2 = document.getElementsByClassName("motsSuggerer");
@@ -140,8 +140,6 @@ function displayAppareilles(recipes) {
           motsSuggere.style.display = "block";
         });
       }
-      //console.log(recipes[i].appliance);
-      //console.log(appareilTri[k]);
     }
     x = 0;
   }
@@ -152,8 +150,6 @@ function displayUstensiles(recipes) {
   let ustensilsTri = [];
   for (let i = 0; i < recipes.length; i++) {
     for (let k = 0; k < recipes[i].ustensils.length; k++) {
-      //console.log(ustensilsTri[k]);
-      //console.log(recipes[i].ustensils[k]);
       let j = 0;
       for (; j < ustensilsTri.length; j++) {
         if (recipes[i].ustensils[k] === ustensilsTri[j]) {

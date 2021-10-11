@@ -99,3 +99,29 @@ body {
 i{
   margin: 10px;
 }
+
+#filterSelected{
+  margin-top: 30px;
+}
+.filtreClckIngredients{
+  color: white;
+  background-color: #3282f7;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.filtreClickAppliance{
+  color: white;
+  background-color: #68D9A4;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.filtreClickUstensils{
+  color: white;
+  background-color: #ED6454;
+  margin: 10px;
+  margin-top: 50px;
+  padding: 10px;
+  border-radius: 5px;
+}
