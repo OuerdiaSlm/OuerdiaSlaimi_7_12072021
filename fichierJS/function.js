@@ -54,16 +54,12 @@ function displayRecipesWithTags(allRecipes, tabFiltre) {
           //spanFilterSelectedClick.setAttribute("class", "ustensilesFilterClick");
         }
       }
-      console.log("test" + tabFiltre);
     }
     let allRecipeReplace = [];
-    // console.log("counteurOk:"+counteurOk+"tabFiltre:"+tabFiltre.length);
     if (counteurOk === tabFiltre.length) {
       allRecipes[k].html();
       allRecipeReplace.push(allRecipes[k]);
 
-      console.log(allRecipeReplace);
-      console.log(allRecipes[k]);
       displayIngredients(allRecipeReplace);
       displayAppareilles(allRecipeReplace);
       displayUstensiles(allRecipeReplace);
@@ -75,13 +71,11 @@ function displayRecipesWithTags(allRecipes, tabFiltre) {
 
 function removeRecipesWithTags(event, tabFiltre) {
   let contentParent = event.target.parentNode.textContent;
-  console.log(contentParent);
   //document.getElementById("carteRecipe").innerHTML = "";
   resetData();
   for (let p = 0; p < tabFiltre.length; p++) {
     if (contentParent.toLowerCase() === tabFiltre[p].toLowerCase()) {
       tabFiltre.splice(p, 1);
-      console.log(tabFiltre);
       //event.target.parentNode.innerHTML = "";
       event.target.parentNode.parentNode.removeChild(event.target.parentNode)
       displayRecipesWithTags(allRecipes, tabFiltre);
@@ -115,7 +109,6 @@ function displayIngredients(recipes) {
     }
     z = 0;
   }
-  //console.log(ingredientTri);
 }
 
 function displayAppareilles(recipes) {

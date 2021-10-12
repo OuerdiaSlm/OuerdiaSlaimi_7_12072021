@@ -31,6 +31,7 @@ let search = document.getElementById("siteSearch");
 searchCode(search );
 
 //Evenement sur la barre de recherche '3 caractere'
+//Deuxieme Algo
 let startSearch= (word) =>{
   resetData();
   displayedRecipes = [];
