@@ -82,7 +82,8 @@ function removeRecipesWithTags(event, tabFiltre) {
     if (contentParent.toLowerCase() === tabFiltre[p].toLowerCase()) {
       tabFiltre.splice(p, 1);
       console.log(tabFiltre);
-      event.target.parentNode.innerHTML = "";
+      //event.target.parentNode.innerHTML = "";
+      event.target.parentNode.parentNode.removeChild(event.target.parentNode)
       displayRecipesWithTags(allRecipes, tabFiltre);
     }
   }

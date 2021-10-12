@@ -91,7 +91,6 @@ clickFiltre(filtre);
             // Div qui va contenir les filtres sur le quel on a cliqué
             const divFilterSelected = document.getElementById("filterSelected");
             let spanFilterSelectedClick=document.createElement("span");
-            spanFilterSelectedClick.setAttribute("id", "spanClick");
             divFilterSelected.appendChild(spanFilterSelectedClick);
             
 
