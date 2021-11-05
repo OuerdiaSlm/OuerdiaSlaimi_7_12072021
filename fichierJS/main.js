@@ -35,35 +35,35 @@ searchCode(search );
 let startSearch= (word) =>{
   resetData();
   displayedRecipes = [];
-  for (let i=0; i < allRecipes.length; i++){
 
+    allRecipes.forEach(element=>{
     // Test le titre
-    if(allRecipes[i].name.toLowerCase().search(word.toLowerCase())!= -1){
-      allRecipes[i].html();
-      displayedRecipes.push(allRecipes[i])
+    if(element.name.toLowerCase().search(word.toLowerCase())!= -1){
+      element.html();
+      displayedRecipes.push(element)
     }
 
     //Evenement sur les ingredients
-    for (let j=0; j < allRecipes[i].ingredients.length; j++){
-      let ingredientsChemain = allRecipes[i].ingredients[j].ingredient;
+    for (let j=0; j < element.ingredients.length; j++){
+      let ingredientsChemain = element.ingredients[j].ingredient;
       if(ingredientsChemain.toLowerCase().search(word.toLowerCase())!= -1){
-        allRecipes[i].html();
-        displayedRecipes.push(allRecipes[i])
+        element.html();
+        displayedRecipes.push(element)
       }
     }
     //Evenemnt sur les appareilles 
-    if(allRecipes[i].appliance.toLowerCase().search(word.toLowerCase())!= -1){
-      allRecipes[i].html();
-      displayedRecipes.push(allRecipes[i])
+    if(element.appliance.toLowerCase().search(word.toLowerCase())!= -1){
+      element.html();
+      displayedRecipes.push(element)
     }
     //Evenemnt sur les ustensiles 
-    for (let k=0; k < allRecipes[i].ustensils.length; k++){
-      if(allRecipes[i].ustensils[k].toLowerCase().search(word.toLowerCase())!= -1){
-        allRecipes[i].html();
-        displayedRecipes.push(allRecipes[i])
+    for (let k=0; k < element.ustensils.length; k++){
+      if(element.ustensils[k].toLowerCase().search(word.toLowerCase())!= -1){
+        element.html();
+        displayedRecipes.push(element)
       }
     }
-  }
+  })
   displayIngredients(displayedRecipes);
   displayAppareilles(displayedRecipes);
   displayUstensiles(displayedRecipes);
@@ -75,7 +75,6 @@ let filtre = document.getElementsByClassName("motsSuggerer");
 clickFiltre(filtre);
   let tabFiltre=[];
   // boucle filtre/evenement click...filtreClass=filtre
-  console.log("Tabfiltre 1 : "+tabFiltre)
   function clickFiltre(filtreclass){
     for (i=0; i<filtreclass.length; i++){
       filtreclass[i].addEventListener("click", function(e){
@@ -86,9 +85,6 @@ clickFiltre(filtre);
             } else{
               tabFiltre= tabFiltre.filter(word => word != target );
             }
-            console.log("Tabfiltre 2 : "+tabFiltre)
-
-            
             // Div qui va contenir les filtres sur le quel on a cliqué
             const divFilterSelected = document.getElementById("filterSelected");
             let spanFilterSelectedClick=document.createElement("span");
@@ -121,9 +117,7 @@ clickFiltre(filtre);
               }
             }
         })
-        
     }
-    
   }
 
   

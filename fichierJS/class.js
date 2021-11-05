@@ -8,7 +8,6 @@ class Recette {
     this.ustensils=ustensils;
   } 
   html() {
-    //console.log("Bonjour");
     let carteRecipe= document.getElementById("carteRecipe");
 
     const figureContainRecipe = document.createElement("figure");
