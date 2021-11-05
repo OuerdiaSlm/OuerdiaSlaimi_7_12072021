@@ -17,6 +17,14 @@ function searchCode(siteSearch) {
   });
 }
 
+//function input mots Ingredient Appareil Ustensiles
+function searchCodeTest(siteSearchIngAppUst) {
+  siteSearchIngAppUst.addEventListener("input", (e) => {
+    let target = e.target.value;
+      startSearchTest(target);
+  });
+}
+
 //
 function displayRecipesWithTags(allRecipes, tabFiltre) {
   let allRecipeReplace = [];
@@ -82,7 +90,7 @@ function removeRecipesWithTags(event, tabFiltre) {
 function displayIngredients(recipes) {
   let divIngredients = document.getElementById("divIngredients");
   let z = 0;
-  let ingredientTri = [];
+  ingredientTri = [];
   recipes.forEach(recipes=>{
     recipes.ingredients.forEach(ingredients=>{
       let j = 0;
@@ -96,6 +104,7 @@ function displayIngredients(recipes) {
         const motsSuggere = document.createElement("li");
         divIngredients.appendChild(motsSuggere);
         motsSuggere.setAttribute("class", "motsSuggerer");
+        motsSuggere.dataset.ingredient=ingredientTri[j];
         attribution(divIngredients, motsSuggere, ingredientTri[j]);
         motsSuggere.style.display = "none";
         sousRecherche1.addEventListener("mouseenter", function () {
@@ -109,16 +118,13 @@ function displayIngredients(recipes) {
 
 function displayAppareilles(recipes) {
   let divAppareil = document.getElementById("divAppareil");
-  const appareilTri = [];
-
+  appareilTri = [];
   recipes.forEach((recipe) => {
-
     if (!appareilTri.includes(recipe.appliance)) {
-
       appareilTri.push(recipe.appliance);
-   
       const motsSuggere = document.createElement("li");
       motsSuggere.setAttribute("class", "motsSuggerer");
+      motsSuggere.dataset.appliance=recipe.appliance;
       attribution(divAppareil, motsSuggere, recipe.appliance);
       motsSuggere.style.display = "none";
       sousRecherche2.addEventListener("mouseenter", function () {
@@ -130,7 +136,7 @@ function displayAppareilles(recipes) {
 function displayUstensiles(recipes) {
   let divUstensiles = document.getElementById("divUstensiles");
   let y = 0;
-  let ustensilsTri = [];
+  ustensilsTri = [];
   recipes.forEach(recipes=>{
     recipes.ustensils.forEach(ustensils=>{
       let j = 0;
@@ -144,6 +150,7 @@ function displayUstensiles(recipes) {
         const motsSuggere = document.createElement("li");
         divUstensiles.appendChild(motsSuggere);
         motsSuggere.setAttribute("class", "motsSuggerer");
+        motsSuggere.dataset.ustensils=ustensilsTri[j];
         attribution(divUstensiles, motsSuggere, ustensilsTri[j]);
         motsSuggere.style.display = "none";
         sousRecherche3.addEventListener("mouseenter", function () {
