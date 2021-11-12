@@ -1,10 +1,8 @@
 let appareilTri = [];
 let ingredientTri = [];
 let ustensilsTri = [];
-
 let displayedRecipes=[];
 
-//appareilTri.push(recipes[0].appliance);
 let allRecipes=[];
 
 for (let i = 0; i < recipes.length; i++) {
@@ -21,7 +19,6 @@ for (let i = 0; i < recipes.length; i++) {
   displayedRecipes.push(carte);
   carte.html();
 }
-
 displayIngredients(displayedRecipes);
 displayAppareilles(displayedRecipes);
 displayUstensiles(displayedRecipes);
@@ -68,7 +65,6 @@ let startSearch= (word) =>{
   displayUstensiles(displayedRecipes);
   
 }
-
 //-2 Recuperation des filtres
 let filtre = document.getElementsByClassName("motsSuggerer");
 
@@ -83,7 +79,6 @@ searchCodeTest(searchUstensiles);
 let startSearchTest= (word) =>{
   //ingredient
   for (i=0; i<ingredientTri.length; i++){
-    //console.log(ingredientTri[i])
     //Evenement sur les ingredients
       if(ingredientTri[i].toLowerCase().search(word.toLowerCase())== -1){
         document.querySelector('[data-ingredient="'+ingredientTri[i]+'"]').style.display="none";
@@ -93,9 +88,6 @@ let startSearchTest= (word) =>{
   }
   //appareille  
   for(h=0; h<appareilTri.length; h++){
-    //console.log(appareilTri)
-    console.log(appareilTri[h]);
-    //console.log(word.toLowerCase());
     //Evenement sur les appareille
       if(appareilTri[h].toLowerCase().search(word.toLowerCase())== -1){
         document.querySelector('[data-appliance="'+appareilTri[h]+'"]').style.display="none";
@@ -105,14 +97,10 @@ let startSearchTest= (word) =>{
   }
   //ustensiles
   for (j=0; j<ustensilsTri.length; j++){
-    console.log(ustensilsTri[j])
-    console.log(word.toLowerCase());
     //Evenement sur les appareille
       if(ustensilsTri[j].toLowerCase().search(word.toLowerCase())== -1){
-        console.log("zzzzzzzzzzzzzzzzzzzzzzzzzzzzz")
         document.querySelector('[data-ustensils="'+ustensilsTri[j]+'"]').style.display="none";
       } else {
-        console.log('MMMMMMMMMMMMMMMMMMMMMMMMMM')
         document.querySelector('[data-ustensils="'+ustensilsTri[j]+'"]').style.display="block";
       }
   }
@@ -120,7 +108,6 @@ let startSearchTest= (word) =>{
 clickFiltre(filtre);
   let tabFiltre=[];
   // boucle filtre/evenement click...filtreClass=filtre
-  console.log("Tabfiltre 1 : "+tabFiltre)
   function clickFiltre(filtreclass){
     for (i=0; i<filtreclass.length; i++){
       filtreclass[i].addEventListener("click", function(e){
@@ -131,9 +118,7 @@ clickFiltre(filtre);
             } else{
               tabFiltre= tabFiltre.filter(word => word != target );
             }
-            console.log("Tabfiltre 2 : "+tabFiltre)
 
-            
             // Div qui va contenir les filtres sur le quel on a cliqué
             const divFilterSelected = document.getElementById("filterSelected");
             let spanFilterSelectedClick=document.createElement("span");
@@ -149,7 +134,7 @@ clickFiltre(filtre);
             croix.setAttribute("id", "croix");    
 
             displayRecipesWithTags(allRecipes, tabFiltre);
-            //TEST
+            //Attribution class
             for (let b=0; b < allRecipes.length; b++){
               for (let c=0; c < allRecipes[b].ingredients.length; c++){
                 if(spanFilterSelectedClick.textContent === allRecipes[b].ingredients[c].ingredient){
@@ -165,10 +150,8 @@ clickFiltre(filtre);
                 }
               }
             }
-        })
-        
+        }) 
     }
-    
   }
 
   
