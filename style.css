@@ -6,6 +6,8 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  max-width:1270px;
+  margin: auto;
 }
 
 #logo{
@@ -22,9 +24,7 @@ body {
 #carteRecipe{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  margin-left: 110px;
-  margin-right: 110px;
+  justify-content: normal;
 }
 
 .containRecipe{
@@ -32,16 +32,18 @@ body {
   width: 380px;
   margin: 20px;
   border-radius: 5px;
+  background-color: #E7E7E7;
 }
 
 .RecipeImg{
-  height: 178px;
+  height: 190px;
   width: 380px;
   background-color: #C7BEBE;
   border-radius: 5px 5px 0px 0px;
 }
 
 .recipeInfo{
+  height: 190px;
   background-color: #E7E7E7;
   padding: 20px;
   max-height: 186px;
@@ -50,7 +52,7 @@ body {
 .infoNameTime, .infoIngredientsDescription{
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }  
 
 .recipeName{
@@ -66,11 +68,17 @@ body {
 } 
 .recipeDescription{
   font-size: 12px;
-  max-height: 89px;
+  max-height: 100px;
   max-width: 171px;
   text-overflow: ellipsis;
 	overflow: auto;
 }  
+
+.classDivTags{
+    max-height: 110px;
+    text-overflow: ellipsis;
+    overflow: auto;
+  }
 
 .ingredientFilterClick{
   background-color: #3282f7;
@@ -101,8 +109,10 @@ i{
 }
 
 #filterSelected{
-  margin-top: 30px;
+  max-width: 1240px;
+  margin: 10px;
 }
+
 .filtreClckIngredients{
   color: white;
   background-color: #3282f7;
