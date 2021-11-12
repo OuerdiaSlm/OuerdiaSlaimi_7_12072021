@@ -32,7 +32,6 @@ searchCode(search );
 let startSearch= (word) =>{
   resetData();
   displayedRecipes = [];
-    console.log(allRecipes);
     allRecipes.forEach(element=>{
     // Evenement sur le titre
     if(element.name.toLowerCase().search(word.toLowerCase())!= -1){
@@ -88,7 +87,6 @@ let startSearchTest= (word) =>{
   }
   //appareille  
   for(h=0; h<appareilTri.length; h++){
-    console.log(appareilTri[h]);
     //Evenement sur les appareille
       if(appareilTri[h].toLowerCase().search(word.toLowerCase())== -1){
         document.querySelector('[data-appliance="'+appareilTri[h]+'"]').style.display="none";
@@ -98,8 +96,6 @@ let startSearchTest= (word) =>{
   }
   //ustensiles
   for (j=0; j<ustensilsTri.length; j++){
-    console.log(ustensilsTri[j])
-    console.log(word.toLowerCase());
     //Evenement sur les appareille
       if(ustensilsTri[j].toLowerCase().search(word.toLowerCase())== -1){
         document.querySelector('[data-ustensils="'+ustensilsTri[j]+'"]').style.display="none";
@@ -126,7 +122,6 @@ clickFiltre(filtre);
             let spanFilterSelectedClick=document.createElement("span");
             divFilterSelected.appendChild(spanFilterSelectedClick);
             
-
             //(-1) psk c'est un tableau et l'index d'un tableau commence par 0
             spanFilterSelectedClick.textContent=tabFiltre[tabFiltre.length-1];
             let croix= document.createElement("i");
