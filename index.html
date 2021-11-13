@@ -27,17 +27,17 @@
 
       <div id="containMotsCles">
         
-        <div id="motsCles1">
-          <ul>
-            <li class="deroulant"> <a href="#">Ingredients</a>
+        <details id="motsCles1">
+              <summary>Ingredients</summary>
               <ul id="sousRecherche1">
-                <li><input type="search" id="siteSearchIngredients" placeholder="Recherche un ingédient"></li>
+                <li>
+                  <input type="search" id="siteSearchIngredients" placeholder="Recherche un ingédient">
+                  <i class="fas fa-chevron-up" id="chevronClose"></i>
+                </li>
                 <li id="divIngredients">
                 </li>
               </ul>
-            </li>
-          </ul>
-        </div>
+        </details>
 
         <div id="motsCles2">
           <ul>
@@ -69,6 +69,7 @@
       <section id="carteRecipe">
         
       </section>
+      <p id="TextErreur">Votre recherche ne correspond à aucune recette, veillez entrez autre chose.</p>
     </main>
     <footer>
       

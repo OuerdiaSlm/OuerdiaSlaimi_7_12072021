@@ -37,6 +37,9 @@ let startSearch= (word) =>{
     if(allRecipes[i].name.toLowerCase().search(word.toLowerCase())!= -1){
       allRecipes[i].html();
       displayedRecipes.push(allRecipes[i])
+    } else{
+      let TextErreur=document.getElementById("TextErreur");
+      TextErreur.style.display="block";
     }
 
     //Evenement sur les ingredients
@@ -154,4 +157,11 @@ clickFiltre(filtre);
     }
   }
 
+
+
   
+  let chevronClose=document.getElementById("chevronClose");
+  chevronClose.addEventListener("click", function() {
+    let sousRecherche1=document.getElementById("sousRecherche1");
+    sousRecherche1.style.display= "none";
+  });

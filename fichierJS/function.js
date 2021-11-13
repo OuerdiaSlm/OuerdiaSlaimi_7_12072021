@@ -11,7 +11,7 @@ function addText(enfant, data) {
 function searchCode(siteSearch) {
   siteSearch.addEventListener("input", (e) => {
     let target = e.target.value;
-    if (target.length >= -1) {
+    if (target.length >= 3) {
       startSearch(target);
     }
   });
@@ -108,10 +108,8 @@ function displayIngredients(recipes) {
         motsSuggere.setAttribute("class", "motsSuggerer");
         motsSuggere.dataset.ingredient=ingredientTri[j];
         attribution(divIngredients, motsSuggere, ingredientTri[j]);
-        motsSuggere.style.display = "none";
-        sousRecherche1.addEventListener("mouseenter", function () {
-          motsSuggere.style.display = "block";
-        });
+        
+        
       }
     }
     z = 0;
