@@ -11,7 +11,7 @@ function addText(enfant, data) {
 function searchCode(siteSearch) {
   siteSearch.addEventListener("input", (e) => {
     let target = e.target.value;
-    if (target.length >= 2) {
+    if (target.length >= 3) {
       startSearch(target);
     }
   });

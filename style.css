@@ -135,3 +135,24 @@ i{
   padding: 10px;
   border-radius: 5px;
 }
+
+.TextErreur{
+  text-align: center;
+  color: #ED6454;
+}
+
+#TextErreur{
+  display: flex;
+  display: none;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  width: 1000px;
+  height: 40px;
+  background-color: #e7e7e76b;
+  color: #d04f4f;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}

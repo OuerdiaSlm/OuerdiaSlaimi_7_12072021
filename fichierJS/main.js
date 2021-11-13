@@ -37,6 +37,9 @@ let startSearch= (word) =>{
     if(element.name.toLowerCase().search(word.toLowerCase())!= -1){
       element.html();
       displayedRecipes.push(element)
+    }else{
+      let TextErreur=document.getElementById("TextErreur");
+      TextErreur.style.display="block";
     }
     //Evenement sur les ingredients
     for (let j=0; j < element.ingredients.length; j++){

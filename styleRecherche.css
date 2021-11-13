@@ -130,7 +130,6 @@ body {
   position: absolute;
   width: 667px;
   left: 0px;
-  top: 0px;
   border-radius: 5px;
   font-size: 18px;
 }
@@ -157,7 +156,7 @@ body {
   font-size: 18px;
 }
 /*..................................*/
-#motsCles1 > ul li:hover #sousRecherche1, #motsCles2 > ul li:hover #sousRecherche2, #motsCles3 > ul li:hover #sousRecherche3{
+ details #sousRecherche1, #motsCles2 > ul li:hover #sousRecherche2, #motsCles3 > ul li:hover #sousRecherche3{
   display: flex;
   flex-wrap: wrap;
   /*justify-content: space-between;*/
@@ -166,6 +165,7 @@ body {
 }
 
 #sousRecherche1 li, #sousRecherche2 li, #sousRecherche3 li{
+  max-width: 667px;
   display: flex;
   float: none;
   text-align: left;
@@ -174,14 +174,10 @@ body {
   padding: 10px;
   border-bottom: none;
 }
-#sousRecherche1 a:hover, #sousRecherche2 a:hover, #sousRecherche3 a:hover{
+#sousRecherche1 details, #sousRecherche2 a:hover, #sousRecherche3 a:hover{
   width: 100%;
   border-bottom: none;
   background-color: RGBa(200,200,200,0.1);
-}
-.deroulant > a::after{
-  content:" ▼";
-  font-size: 18px;
 }
 
 .motsSuggerer{
@@ -204,9 +200,14 @@ body {
   flex-wrap: wrap;
 }
 
-#motsCles1:hover, #motsCles2:hover, #motsCles3:hover{
+ #motsCles2:hover, #motsCles3:hover{
   width: 667px;
 }
+
+#motsCles1[open]{
+  width: 667px;
+}
+
 
 @media screen and (min-width: 340px) and (max-width: 570px){
   #containMotsCles{
