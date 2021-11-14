@@ -100,7 +100,6 @@ let startSearch= (word) =>{
     elem.html();
   })
   if (testConteur==0){
-    console.log("UUUUUUUUUUUUUUUUUUUUUU")
     let TextErreur=document.getElementById("TextErreur");
     TextErreur.style.display="block";
   } else{
@@ -201,9 +200,26 @@ clickFiltre(filtre);
     }
   }
 
+  let chevronClose1=document.getElementById("chevronClose1");
+  chevronClose1.addEventListener("click", function() {
+    let details= document.getElementById("motsCles1");
+    if(details.open){
+      details.removeAttribute("open");
+    }
+  });
 
-let chevronClose=document.getElementById("chevronClose");
-chevronClose.addEventListener("click", function() {
-  let sousRecherche1=document.getElementById("sousRecherche1");
-  sousRecherche1.style.display= "none";
-});
+  let chevronClose2=document.getElementById("chevronClose2");
+  chevronClose2.addEventListener("click", function() {
+    let details2= document.getElementById("motsCles2");
+    if(details2.open){
+      details2.removeAttribute("open");
+    }
+  });
+
+  let chevronClose3=document.getElementById("chevronClose3");
+  chevronClose3.addEventListener("click", function() {
+    let details3= document.getElementById("motsCles3");
+    if(details3.open){
+      details3.removeAttribute("open");
+    }
+  });
