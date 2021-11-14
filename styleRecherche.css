@@ -132,7 +132,9 @@ body {
   left: 0px;
   border-radius: 5px;
   font-size: 18px;
+  top: 0;
 }
+
 #sousRecherche2{
   display: none;
   background-color: #68D9A4;
@@ -140,10 +142,23 @@ body {
   position: absolute;
   width: 667px;
   left: 0px;
-  top: 0px;
   border-radius: 5px;
   font-size: 18px;
+  top: 0;
 }
+
+.summary{
+  display: flex;
+  justify-content: space-between;
+  width: 135px;
+}
+::marker{
+  color: #fff0;
+}
+#chevronOpen1, #chevronOpen2, #chevronOpen3{
+  line-height: -0;
+}
+
 #sousRecherche3{
   display: none;
   background-color: #ED6454;
@@ -156,7 +171,7 @@ body {
   font-size: 18px;
 }
 /*..................................*/
- details #sousRecherche1, #motsCles2 > ul li:hover #sousRecherche2, #motsCles3 > ul li:hover #sousRecherche3{
+ details #sousRecherche1, details #sousRecherche2, details #sousRecherche3{
   display: flex;
   flex-wrap: wrap;
   /*justify-content: space-between;*/
@@ -174,7 +189,7 @@ body {
   padding: 10px;
   border-bottom: none;
 }
-#sousRecherche1 details, #sousRecherche2 a:hover, #sousRecherche3 a:hover{
+#sousRecherche1 details, #sousRecherche2 details, #sousRecherche3 details{
   width: 100%;
   border-bottom: none;
   background-color: RGBa(200,200,200,0.1);
@@ -200,11 +215,13 @@ body {
   flex-wrap: wrap;
 }
 
- #motsCles2:hover, #motsCles3:hover{
+#motsCles1[open]{
   width: 667px;
 }
-
-#motsCles1[open]{
+#motsCles2[open]{
+  width: 667px;
+}
+#motsCles3[open]{
   width: 667px;
 }
 

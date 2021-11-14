@@ -28,41 +28,49 @@
       <div id="containMotsCles">
         
         <details id="motsCles1">
-              <summary>Ingredients</summary>
+              <summary class="summary">Ingredients
+                <i class="fas fa-chevron-down" id="chevronOpen1"></i>
+              </summary>
               <ul id="sousRecherche1">
                 <li>
                   <input type="search" id="siteSearchIngredients" placeholder="Recherche un ingédient">
-                  <i class="fas fa-chevron-up" id="chevronClose"></i>
+                  <i class="fas fa-chevron-up" id="chevronClose1"></i>
                 </li>
                 <li id="divIngredients">
                 </li>
               </ul>
         </details>
 
-        <div id="motsCles2">
-          <ul>
-            <li class="deroulant"> <a href="#">Appareil</a>
-              <ul id="sousRecherche2">
-                <li><input type="search" id="siteSearchAppareil" placeholder="Recherche un appareil"></li>
-                <li id="divAppareil">
-                </li>
-              </ul>
+        <details id="motsCles2">
+          <summary class="summary">Appareil
+            <i class="fas fa-chevron-down" id="chevronOpen2"></i>
+          </summary>
+          <ul id="sousRecherche2">
+            <li>
+              <input type="search" id="siteSearchAppareil" placeholder="Recherche un appareil">
+              <i class="fas fa-chevron-up" id="chevronClose2"></i>
+            </li>
+            <li id="divAppareil">
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div id="motsCles3">
-          <ul>
-            <li class="deroulant"> <a href="#">Ustensiles</a>
-              <ul id="sousRecherche3">
-                <li><input type="search" id="siteSearchUstensiles" placeholder="Recherche un ustensile"></li>
-                <li id="divUstensiles">
-                </li>  
-              </ul>
+        <details id="motsCles3">
+          <summary class="summary">Ustensiles
+            <i class="fas fa-chevron-down" id="chevronOpen3"></i>
+          </summary>
+          <ul id="sousRecherche3">
+            <li>
+              <input type="search" id="siteSearchUstensiles" placeholder="Recherche un ustensile">
+              <i class="fas fa-chevron-up" id="chevronClose3"></i>
+            </li>
+            <li id="divUstensiles">
             </li>
           </ul>
-        </div>
+        </details>
+
       </div>
+      
     </header>
 
     <main id="main">
