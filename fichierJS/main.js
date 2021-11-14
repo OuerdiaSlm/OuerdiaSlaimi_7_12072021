@@ -4,10 +4,12 @@ let ustensilsTri = [];
 let displayedRecipes=[];
 
 let allRecipes=[];
+let recipesContain = [];
 
 for (let i = 0; i < recipes.length; i++) {
   // Nouvelle class
   let carte = new Recette(
+    recipes[i].id,
     recipes[i].name,
     recipes[i].ingredients,
     recipes[i].time,
@@ -26,47 +28,80 @@ displayUstensiles(displayedRecipes);
 //-1 Recupération de la barre de recherche
 let search = document.getElementById("siteSearch");
 searchCode(search );
-
 //Evenement sur la barre de recherche '3 caractere'
 let startSearch= (word) =>{
   resetData();
   displayedRecipes = [];
   let testConteur= 0;
+  recipesContain = [];
+  let exists = false;
+
   allRecipes.forEach(allRecipes=>{
     // Test le titre
     if(allRecipes.name.toLowerCase().search(word.toLowerCase())!== -1){
       testConteur++;
-      console.log("ZZZZZZZZZZZZZZZZZZ")
-      allRecipes.html();
+     // allRecipes.html();
       displayedRecipes.push(allRecipes);
+      recipesContain.push(allRecipes);
     }
-
+    exists = false;
     //Evenement sur les ingredients
     for (let j=0; j < allRecipes.ingredients.length; j++){
       let ingredientsChemain = allRecipes.ingredients[j].ingredient;
       if(ingredientsChemain.toLowerCase().search(word.toLowerCase())!== -1){
         //allRecipes.splice(1);
         testConteur++;
-        allRecipes.html();
+        //allRecipes.html();
+        for(i in recipesContain ){
+          if(recipesContain[i].id == allRecipes.id){
+            exists = true;
+          }
+        }
+        if(!exists){
+           recipesContain.push( allRecipes);
+        }
         displayedRecipes.push(allRecipes)
       }
     }
+    exists = false;
     //Evenemnt sur les appareilles 
     if(allRecipes.appliance.toLowerCase().search(word.toLowerCase())!== -1){
       testConteur++;
-      allRecipes.html();
+      //allRecipes.html();
+      for(i in recipesContain ){
+        if(recipesContain[i].id == allRecipes.id){
+          exists = true;
+        }
+      }
+      if(!exists){
+         recipesContain.push( allRecipes);
+      }
       displayedRecipes.push(allRecipes)
     }
+    exists = false;
     //Evenemnt sur les ustensiles 
     for (let k=0; k < allRecipes.ustensils.length; k++){
       if(allRecipes.ustensils[k].toLowerCase().search(word.toLowerCase())!== -1){
         testConteur++;
-        allRecipes.html();
-        displayedRecipes.push(allRecipes)
-        
+       // allRecipes.html();
+        displayedRecipes.push(allRecipes);
+        for(i in recipesContain ){
+          if(recipesContain[i].id == allRecipes.id){
+            exists = true;
+          }
+        }
+        if(!exists){
+           recipesContain.push( allRecipes);
+        }
       }
     }
+   //console.log(tt);
   })
+  //Affichage des recettes
+  for(i in recipesContain ){
+    let elem = recipesContain[i];
+    elem.html();
+  }
   if (testConteur==0){
     console.log("UUUUUUUUUUUUUUUUUUUUUU")
     let TextErreur=document.getElementById("TextErreur");
@@ -140,8 +175,7 @@ clickFiltre(filtre);
             // Div qui va contenir les filtres sur le quel on a cliqué
             const divFilterSelected = document.getElementById("filterSelected");
             let spanFilterSelectedClick=document.createElement("span");
-            divFilterSelected.appendChild(spanFilterSelectedClick);
-            
+            divFilterSelected.appendChild(spanFilterSelectedClick);           
 
             //(-1) psk c'est un tableau et l'index d'un tableau commence par 0
             spanFilterSelectedClick.textContent=tabFiltre[tabFiltre.length-1];
@@ -173,10 +207,8 @@ clickFiltre(filtre);
   }
 
 
-
-  
-  let chevronClose=document.getElementById("chevronClose");
-  chevronClose.addEventListener("click", function() {
-    let sousRecherche1=document.getElementById("sousRecherche1");
-    sousRecherche1.style.display= "none";
-  });
+let chevronClose=document.getElementById("chevronClose");
+chevronClose.addEventListener("click", function() {
+  let sousRecherche1=document.getElementById("sousRecherche1");
+  sousRecherche1.style.display= "none";
+});

@@ -1,5 +1,6 @@
 class Recette {
-  constructor(name, ingredients, time, description, appliance, ustensils){
+  constructor(id,name, ingredients, time, description, appliance, ustensils){
+    this.id=id;
     this.name=name;
     this.ingredients=ingredients;
     this.time=time;
