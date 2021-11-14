@@ -2,7 +2,7 @@ let appareilTri = [];
 let ingredientTri = [];
 let ustensilsTri = [];
 let displayedRecipes=[];
-//appareilTri.push(recipes[0].appliance);
+
 let allRecipes=[];
 
 for (let i = 0; i < recipes.length; i++) {
@@ -28,44 +28,60 @@ let search = document.getElementById("siteSearch");
 searchCode(search );
 
 //Evenement sur la barre de recherche '3 caractere'
-//Deuxieme Algo
 let startSearch= (word) =>{
   resetData();
   displayedRecipes = [];
-    allRecipes.forEach(element=>{
-    // Evenement sur le titre
-    if(element.name.toLowerCase().search(word.toLowerCase())!= -1){
-      element.html();
-      displayedRecipes.push(element)
-    }else{
-      let TextErreur=document.getElementById("TextErreur");
-      TextErreur.style.display="block";
+  let testConteur= 0;
+  allRecipes.forEach(allRecipes=>{
+    // Test le titre
+    if(allRecipes.name.toLowerCase().search(word.toLowerCase())!== -1){
+      testConteur++;
+      console.log("ZZZZZZZZZZZZZZZZZZ")
+      allRecipes.html();
+      displayedRecipes.push(allRecipes);
     }
+
     //Evenement sur les ingredients
-    for (let j=0; j < element.ingredients.length; j++){
-      let ingredientsChemain = element.ingredients[j].ingredient;
-      if(ingredientsChemain.toLowerCase().search(word.toLowerCase())!= -1){
-        element.html();
-        displayedRecipes.push(element)
+    for (let j=0; j < allRecipes.ingredients.length; j++){
+      let ingredientsChemain = allRecipes.ingredients[j].ingredient;
+      if(ingredientsChemain.toLowerCase().search(word.toLowerCase())!== -1){
+        //allRecipes.splice(1);
+        testConteur++;
+        allRecipes.html();
+        displayedRecipes.push(allRecipes)
       }
     }
     //Evenemnt sur les appareilles 
-    if(element.appliance.toLowerCase().search(word.toLowerCase())!= -1){
-      element.html();
-      displayedRecipes.push(element)
+    if(allRecipes.appliance.toLowerCase().search(word.toLowerCase())!== -1){
+      testConteur++;
+      allRecipes.html();
+      displayedRecipes.push(allRecipes)
     }
     //Evenemnt sur les ustensiles 
-    for (let k=0; k < element.ustensils.length; k++){
-      if(element.ustensils[k].toLowerCase().search(word.toLowerCase())!= -1){
-        element.html();
-        displayedRecipes.push(element)
+    for (let k=0; k < allRecipes.ustensils.length; k++){
+      if(allRecipes.ustensils[k].toLowerCase().search(word.toLowerCase())!== -1){
+        testConteur++;
+        allRecipes.html();
+        displayedRecipes.push(allRecipes)
+        
       }
     }
   })
+  if (testConteur==0){
+    console.log("UUUUUUUUUUUUUUUUUUUUUU")
+    let TextErreur=document.getElementById("TextErreur");
+    TextErreur.style.display="block";
+  } else{
+    let TextErreur=document.getElementById("TextErreur");
+    TextErreur.style.display="none";
+  }
+  
   displayIngredients(displayedRecipes);
   displayAppareilles(displayedRecipes);
   displayUstensiles(displayedRecipes);
+  //displayedRecipes=[];
 }
+
 
 //-2 Recuperation des filtres
 let filtre = document.getElementsByClassName("motsSuggerer");
@@ -120,11 +136,13 @@ clickFiltre(filtre);
             } else{
               tabFiltre= tabFiltre.filter(word => word != target );
             }
+
             // Div qui va contenir les filtres sur le quel on a cliqué
             const divFilterSelected = document.getElementById("filterSelected");
             let spanFilterSelectedClick=document.createElement("span");
             divFilterSelected.appendChild(spanFilterSelectedClick);
             
+
             //(-1) psk c'est un tableau et l'index d'un tableau commence par 0
             spanFilterSelectedClick.textContent=tabFiltre[tabFiltre.length-1];
             let croix= document.createElement("i");
@@ -134,7 +152,7 @@ clickFiltre(filtre);
             croix.setAttribute("id", "croix");    
 
             displayRecipesWithTags(allRecipes, tabFiltre);
-            //TEST
+            //Attribution class
             for (let b=0; b < allRecipes.length; b++){
               for (let c=0; c < allRecipes[b].ingredients.length; c++){
                 if(spanFilterSelectedClick.textContent === allRecipes[b].ingredients[c].ingredient){
@@ -150,6 +168,15 @@ clickFiltre(filtre);
                 }
               }
             }
-        })
+        }) 
     }
   }
+
+
+
+  
+  let chevronClose=document.getElementById("chevronClose");
+  chevronClose.addEventListener("click", function() {
+    let sousRecherche1=document.getElementById("sousRecherche1");
+    sousRecherche1.style.display= "none";
+  });

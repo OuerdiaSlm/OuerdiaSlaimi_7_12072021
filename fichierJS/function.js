@@ -11,7 +11,7 @@ function addText(enfant, data) {
 function searchCode(siteSearch) {
   siteSearch.addEventListener("input", (e) => {
     let target = e.target.value;
-    if (target.length >= 3) {
+    if (target.length >= 0) {
       startSearch(target);
     }
   });
@@ -77,8 +77,10 @@ function displayRecipesWithTags(allRecipes, tabFiltre) {
 
 function removeRecipesWithTags(event, tabFiltre) {
   let contentParent = event.target.parentNode.textContent;
+  console.log(event+"Je suiis laaaa");
   resetData();
   for (let p = 0; p < tabFiltre.length; p++) {
+    console.log(tabFiltre+"VAVVAAAMMMM")
     if (contentParent.toLowerCase() === tabFiltre[p].toLowerCase()) {
       tabFiltre.splice(p, 1);
       event.target.parentNode.parentNode.removeChild(event.target.parentNode);
