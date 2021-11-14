@@ -4,10 +4,12 @@ let ustensilsTri = [];
 let displayedRecipes=[];
 
 let allRecipes=[];
+let recipesContain = [];
 
 for (let i = 0; i < recipes.length; i++) {
   // Nouvelle class
   let carte = new Recette(
+    recipes[i].id,
     recipes[i].name,
     recipes[i].ingredients,
     recipes[i].time,
@@ -31,37 +33,82 @@ searchCode(search );
 let startSearch= (word) =>{
   resetData();
   displayedRecipes = [];
+  let testConteur= 0;
+  recipesContain = [];
+  let exists = false;
+
   for (let i=0; i < allRecipes.length; i++){
-
     // Test le titre
-    if(allRecipes[i].name.toLowerCase().search(word.toLowerCase())!= -1){
-      allRecipes[i].html();
-      displayedRecipes.push(allRecipes[i])
-    } else{
-      let TextErreur=document.getElementById("TextErreur");
-      TextErreur.style.display="block";
+    if(allRecipes[i].name.toLowerCase().search(word.toLowerCase())!== -1){
+      testConteur++;
+      console.log(allRecipes);
+      console.log(allRecipes[i]);
+      displayedRecipes.push(allRecipes[i]);
+      recipesContain.push(allRecipes[i]);
     }
-
+    exists = false;
     //Evenement sur les ingredients
     for (let j=0; j < allRecipes[i].ingredients.length; j++){
       let ingredientsChemain = allRecipes[i].ingredients[j].ingredient;
-      if(ingredientsChemain.toLowerCase().search(word.toLowerCase())!= -1){
-        allRecipes[i].html();
+      if(ingredientsChemain.toLowerCase().search(word.toLowerCase())!== -1){
+        testConteur++;
+        //allRecipes.html();
+        for(r in recipesContain ){
+          if(recipesContain[r].id == allRecipes[i].id){
+            exists = true;
+          }
+        }
+        if(!exists){
+           recipesContain.push( allRecipes[i]);
+        }
         displayedRecipes.push(allRecipes[i])
       }
     }
+    exists = false;
     //Evenemnt sur les appareilles 
-    if(allRecipes[i].appliance.toLowerCase().search(word.toLowerCase())!= -1){
-      allRecipes[i].html();
+    if(allRecipes[i].appliance.toLowerCase().search(word.toLowerCase())!== -1){
+      testConteur++;
+      //allRecipes.html();
+      for(r in recipesContain ){
+        if(recipesContain[r].id == allRecipes[i].id){
+          exists = true;
+        }
+      }
+      if(!exists){
+         recipesContain.push( allRecipes[i]);
+      }
       displayedRecipes.push(allRecipes[i])
     }
+    exists = false;
     //Evenemnt sur les ustensiles 
     for (let k=0; k < allRecipes[i].ustensils.length; k++){
-      if(allRecipes[i].ustensils[k].toLowerCase().search(word.toLowerCase())!= -1){
-        allRecipes[i].html();
-        displayedRecipes.push(allRecipes[i])
+      if(allRecipes[i].ustensils[k].toLowerCase().search(word.toLowerCase())!== -1){
+        testConteur++;
+       // allRecipes.html();
+        displayedRecipes.push(allRecipes[i]);
+        for(r in recipesContain ){
+          if(recipesContain[r].id == allRecipes[i].id){
+            exists = true;
+          }
+        }
+        if(!exists){
+           recipesContain.push( allRecipes[i]);
+        }
       }
     }
+  }
+  //Affichage des recettes
+  for(r in recipesContain ){
+    let elem = recipesContain[r];
+    elem.html();
+  }
+  if (testConteur==0){
+    console.log("UUUUUUUUUUUUUUUUUUUUUU")
+    let TextErreur=document.getElementById("TextErreur");
+    TextErreur.style.display="block";
+  } else{
+    let TextErreur=document.getElementById("TextErreur");
+    TextErreur.style.display="none";
   }
   displayIngredients(displayedRecipes);
   displayAppareilles(displayedRecipes);
