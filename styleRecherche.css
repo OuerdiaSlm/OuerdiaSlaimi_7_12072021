@@ -66,7 +66,9 @@ body {
 #containMotsCles{
   max-width: 1240px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: start;
+  position: absolute;
   margin: 10px;
 }
 /*..................................*/
@@ -124,6 +126,8 @@ body {
 
 /*..................................*/
 #sousRecherche1{
+  display: flex;
+  flex-wrap: wrap;
   display: none;
   background-color: #3282F7;
   color: white;
@@ -136,6 +140,8 @@ body {
 }
 
 #sousRecherche2{
+  display: flex;
+  flex-wrap: wrap;
   display: none;
   background-color: #68D9A4;
   color: white;
@@ -215,19 +221,15 @@ body {
   flex-wrap: wrap;
 }
 
-#motsCles1[open]{
+#motsCles1[open], #motsCles2[open], #motsCles3[open]{
   width: 667px;
-}
-#motsCles2[open]{
-  width: 667px;
-}
-#motsCles3[open]{
-  width: 667px;
+  height: 470px;
 }
 
 @media screen and (min-width:420px) and (max-width: 1073px){
   #motsCles1[open], #motsCles2[open], #motsCles3[open] {
     width: 380px;
+    height: 470px;
   }
   #sousRecherche1, #sousRecherche2 , #sousRecherche3 {
     width: 380px;
@@ -254,6 +256,7 @@ body {
   }
   #motsCles1[open], #motsCles2[open], #motsCles3[open] {
     width: 300px;
+    height: 470px;
   }
   #sousRecherche1, #sousRecherche2 , #sousRecherche3 {
     width: 300px;
@@ -282,6 +285,7 @@ body {
 
   #motsCles1[open], #motsCles2[open], #motsCles3[open] {
     width: 250px;
+    height: 470px;
   }
   #sousRecherche1, #sousRecherche2 , #sousRecherche3 {
     width: 250px;
