@@ -225,7 +225,22 @@ body {
   width: 667px;
 }
 
+@media screen and (min-width:420px) and (max-width: 1073px){
+  #motsCles1[open], #motsCles2[open], #motsCles3[open] {
+    width: 380px;
+  }
+  #sousRecherche1, #sousRecherche2 , #sousRecherche3 {
+    width: 380px;
+  }
+  #siteSearchIngredients, #siteSearchAppareil, #siteSearchUstensiles  {
+    width: 340px;
+  }
 
+  #TextErreur{
+    width: 380px;
+    height: auto;
+  }
+}
 @media screen and (min-width: 340px) and (max-width: 570px){
   #containMotsCles{
     display: block;
@@ -236,6 +251,20 @@ body {
   }
   .RecipeImg {
     width: 300px;
+  }
+  #motsCles1[open], #motsCles2[open], #motsCles3[open] {
+    width: 300px;
+  }
+  #sousRecherche1, #sousRecherche2 , #sousRecherche3 {
+    width: 300px;
+  }
+  #siteSearchIngredients, #siteSearchAppareil, #siteSearchUstensiles  {
+    width: 260px;
+  }
+
+  #TextErreur{
+    width: 300px;
+    height: auto;
   }
 }
 
@@ -249,5 +278,20 @@ body {
   }
   .RecipeImg {
     width: 250px;
+  }
+
+  #motsCles1[open], #motsCles2[open], #motsCles3[open] {
+    width: 250px;
+  }
+  #sousRecherche1, #sousRecherche2 , #sousRecherche3 {
+    width: 250px;
+  }
+  #siteSearchIngredients, #siteSearchAppareil, #siteSearchUstensiles  {
+    width: 200px;
+  }
+
+  #TextErreur{
+    width: 250px;
+    height: auto;
   }
 }
