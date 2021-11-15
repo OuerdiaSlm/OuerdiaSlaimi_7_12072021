@@ -24,8 +24,7 @@ body {
 #carteRecipe{
   display: flex;
   flex-wrap: wrap;
-  justify-content: normal;
-  margin-top: 100px;
+  justify-content: center;
 }
 
 .containRecipe{
@@ -38,7 +37,7 @@ body {
 
 .RecipeImg{
   height: 190px;
-  width: 380px;
+  width: 100%;
   background-color: #C7BEBE;
   border-radius: 5px 5px 0px 0px;
 }
@@ -137,10 +136,7 @@ i{
   border-radius: 5px;
 }
 
-.TextErreur{
-  text-align: center;
-  color: #ED6454;
-}
+
 
 #TextErreur{
   display: flex;
@@ -149,8 +145,8 @@ i{
   margin-left: auto;
   margin-right: auto;
   margin-top: 100px;
-  width: 1000px;
-  height: 40px;
+  width: 80%;
+  height: 100%;
   background-color: #e7e7e76b;
   color: #d04f4f;
   padding: 10px;
