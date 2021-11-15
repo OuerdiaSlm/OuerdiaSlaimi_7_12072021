@@ -106,10 +106,6 @@ function displayIngredients(recipes) {
         motsSuggere.setAttribute("class", "motsSuggerer");
         motsSuggere.dataset.ingredient=ingredientTri[j];
         attribution(divIngredients, motsSuggere, ingredientTri[j]);
-        motsSuggere.style.display = "none";
-        sousRecherche1.addEventListener("mouseenter", function () {
-          motsSuggere.style.display = "block";
-        });
       }
     })
     z = 0;
@@ -126,10 +122,6 @@ function displayAppareilles(recipes) {
       motsSuggere.setAttribute("class", "motsSuggerer");
       motsSuggere.dataset.appliance=recipe.appliance;
       attribution(divAppareil, motsSuggere, recipe.appliance);
-      motsSuggere.style.display = "none";
-      sousRecherche2.addEventListener("mouseenter", function () {
-        motsSuggere.style.display = "block";
-      });
     }
   });
 }
@@ -152,10 +144,6 @@ function displayUstensiles(recipes) {
         motsSuggere.setAttribute("class", "motsSuggerer");
         motsSuggere.dataset.ustensils=ustensilsTri[j];
         attribution(divUstensiles, motsSuggere, ustensilsTri[j]);
-        motsSuggere.style.display = "none";
-        sousRecherche3.addEventListener("mouseenter", function () {
-          motsSuggere.style.display = "block";
-        });
       }
     })
     y = 0;
