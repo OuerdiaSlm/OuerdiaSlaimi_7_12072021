@@ -64,7 +64,7 @@ let startSearch= (word) =>{
     }
     exists = false;
     //Evenemnt sur les appareilles 
-    if(allRecipes[i].appliance.toLowerCase().search(word.toLowerCase())!== -1){
+    if(allRecipes[i].description.toLowerCase().search(word.toLowerCase())!== -1){
       testConteur++;
       //allRecipes.html();
       for(r in recipesContain ){
@@ -78,22 +78,6 @@ let startSearch= (word) =>{
       displayedRecipes.push(allRecipes[i])
     }
     exists = false;
-    //Evenemnt sur les ustensiles 
-    for (let k=0; k < allRecipes[i].ustensils.length; k++){
-      if(allRecipes[i].ustensils[k].toLowerCase().search(word.toLowerCase())!== -1){
-        testConteur++;
-       // allRecipes.html();
-        displayedRecipes.push(allRecipes[i]);
-        for(r in recipesContain ){
-          if(recipesContain[r].id == allRecipes[i].id){
-            exists = true;
-          }
-        }
-        if(!exists){
-           recipesContain.push( allRecipes[i]);
-        }
-      }
-    }
   }
   //Affichage des recettes
   for(r in recipesContain ){
@@ -212,7 +196,6 @@ document.querySelectorAll('.fa-chevron-up').forEach(chevron=>{
 document.querySelectorAll("summary").forEach(summary=>{
   summary.addEventListener("click", function(e){
     const elements = document.querySelectorAll("details:not(#"+e.target.parentNode.id+")");
-    console.log(elements);
     elements.forEach(elem=>{
       if(elem.open){
         elem.removeAttribute("open");
