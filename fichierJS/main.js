@@ -94,6 +94,10 @@ let startSearch= (word) =>{
   displayIngredients(displayedRecipes);
   displayAppareilles(displayedRecipes);
   displayUstensiles(displayedRecipes);
+
+  //clickFiltre=> fonction qui fait le click et le tri
+  let filtre3 = document.getElementsByClassName("motsSuggerer");
+  clickFiltre(filtre3, word);
   
 }
 //-2 Recuperation des filtres
@@ -139,10 +143,11 @@ let startSearchTest= (word) =>{
 clickFiltre(filtre);
   let tabFiltre=[];
   // boucle filtre/evenement click...filtreClass=filtre
-  function clickFiltre(filtreclass){
+  function clickFiltre(filtreclass, a=null){
     for (i=0; i<filtreclass.length; i++){
       filtreclass[i].addEventListener("click", function(e){
-        resetData();  
+        resetData();
+        if(a!=null)tabFiltre.push(a);  
             let target=e.target.textContent;
             if(!tabFiltre.includes(target)){
               tabFiltre.push(target);
