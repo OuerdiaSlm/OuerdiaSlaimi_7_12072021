@@ -94,8 +94,12 @@ let startSearch= (word) =>{
   displayIngredients(displayedRecipes);
   displayAppareilles(displayedRecipes);
   displayUstensiles(displayedRecipes);
+  
+  //clickFiltre=> fonction qui fait le click et le tri
+  let filtre3 = document.getElementsByClassName("motsSuggerer");
+  clickFiltre(filtre3, word);
+    
 }
-
 
 //-2 Recuperation des filtres
 let filtre = document.getElementsByClassName("motsSuggerer");
@@ -140,10 +144,11 @@ let startSearchTest= (word) =>{
 clickFiltre(filtre);
   let tabFiltre=[];
   // boucle filtre/evenement click...filtreClass=filtre
-  function clickFiltre(filtreclass){
+  function clickFiltre(filtreclass, a=null){
     for (i=0; i<filtreclass.length; i++){
       filtreclass[i].addEventListener("click", function(e){
-        resetData();  
+        resetData();
+        if(a!=null)tabFiltre.push(a);  
             let target=e.target.textContent;
             if(!tabFiltre.includes(target)){
               tabFiltre.push(target);
@@ -185,15 +190,14 @@ clickFiltre(filtre);
     }
   }
 
-
-  document.querySelectorAll('.fa-chevron-up').forEach(chevron=>{
-    chevron.addEventListener('click', function(){
-      let details = chevron.parentNode.parentNode.parentNode;
-      if(details.open) {
-        details.removeAttribute("open");
-      }
-    })
+document.querySelectorAll('.fa-chevron-up').forEach(chevron=>{
+  chevron.addEventListener('click', function(){
+    let details = chevron.parentNode.parentNode.parentNode;
+    if(details.open) {
+      details.removeAttribute("open");
+    }
   })
+})
 
 document.querySelectorAll("summary").forEach(summary=>{
   summary.addEventListener("click", function(e){
